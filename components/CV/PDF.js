@@ -157,9 +157,9 @@ const CVPDF = (props) => {
               <Text style={{ fontSize: 20, fontWeight: 700 }}>2021:</Text>
               <View style={{ paddingHorizontal: 10 }}>
                 <Text style={{ fontSize: 15, paddingTop: 20 }}>
-                  I/ Création d'un site vitrine et d'un blog pour "Integrative
-                  Phenomics", société d'analyse médicale du microbiote et de
-                  conseils en nutrition.
+                  I/ Création d&apos;un site vitrine et d&apos;un blog pour
+                  "Integrative Phenomics", société d&apos;analyse médicale du
+                  microbiote et de conseils en nutrition.
                 </Text>
                 <View style={{ paddingHorizontal: 10, marginTop: 10 }}>
                   <Text style={{ fontSize: 11 }}>
@@ -183,8 +183,8 @@ const CVPDF = (props) => {
                   </View>
                 </View>
                 <Text style={{ fontSize: 15, paddingTop: 20 }}>
-                  II/ Création d'une application web ("Enterapie") pour
-                  "Integrative Phenomics", société d'analyse médicale du
+                  II/ Création d&apos;une application web ("Enterapie") pour
+                  "Integrative Phenomics", société d&apos;analyse médicale du
                   microbiote et de conseils en nutrition. Cette plateforme est
                   destinée au médecins spécialisés dans la nutrition.
                 </Text>
@@ -223,8 +223,8 @@ const CVPDF = (props) => {
                   </View>
                 </View>
                 <Text style={{ fontSize: 15, paddingTop: 20 }}>
-                  III/ Création d'une application web ("EatSmart") pour
-                  "Integrative Phenomics", société d'analyse médicale du
+                  III/ Création d&apos;une application web ("EatSmart") pour
+                  "Integrative Phenomics", société d&apos;analyse médicale du
                   microbiote et de conseils en nutrition.
                 </Text>
                 <View style={{ paddingHorizontal: 10, marginTop: 10 }}>
@@ -261,16 +261,17 @@ const CVPDF = (props) => {
                   </View>
                 </View>
                 <Text style={{ fontSize: 15, paddingTop: 20 }}>
-                  IV/ Intégration d'un éditeur de texte (TinyMCE, Draft.js) pour
-                  un CMS "EventsBlue" créé pour la société "Quintys Limited"
+                  IV/ Intégration d&apos;un éditeur de texte (TinyMCE, Draft.js)
+                  pour un CMS "EventsBlue" créé pour la société "Quintys
+                  Limited"
                 </Text>
                 <View style={{ paddingHorizontal: 10, marginTop: 10 }}>
                   <Text style={{ fontSize: 11 }}>
-                    • Intégration du module d'édition de texte au format HTML
-                    avec TinyMCE et Draft.JS
+                    • Intégration du module d&apos;édition de texte au format
+                    HTML avec TinyMCE et Draft.JS
                   </Text>
                   <Text style={{ fontSize: 11 }}>
-                    • Enregistrement des contenus avec AWS via l'API
+                    • Enregistrement des contenus avec AWS via l&apos;API
                   </Text>
 
                   <View
@@ -290,19 +291,19 @@ const CVPDF = (props) => {
                 </View>
                 <Text style={{ fontSize: 15, paddingTop: 20 }}>
                   V/ Intégration HTML / CSS / Javascript pour la Banque
-                  Populaire d'Investissement.
+                  Populaire d&apos;Investissement.
                 </Text>
                 <View style={{ paddingHorizontal: 10, marginTop: 10 }}>
                   <Text style={{ fontSize: 11 }}>
-                    • Création d'une page de validation de CGU.
+                    • Création d&apos;une page de validation de CGU.
                   </Text>
                   <Text style={{ fontSize: 11 }}>
                     • Intégrations de divers éléments pour les pages
-                    d'authentications.
+                    d&apos;authentications.
                   </Text>
                   <Text style={{ fontSize: 11 }}>
                     • Intégration du module "Intl-Tel-Input" pour récupérer les
-                    numéros de téléphones à l'international
+                    numéros de téléphones à l&apos;international
                   </Text>
                   <View
                     style={{
