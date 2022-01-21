@@ -1,4 +1,8 @@
+import Link from "next/link";
+import { useRouter } from "next/router";
+
 const Navbar = () => {
+  const router = useRouter();
   return (
     <nav
       className="navbar navbar-expand-lg navbar-dark w-100 px-md-5 pt-4 position-absolute"
@@ -21,6 +25,17 @@ const Navbar = () => {
             </g>
           </svg>
         </a>
+        {router && router.pathname !== "/catalogue" && (
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <Link aria-current="page" href="/catalogue" passHref>
+                <button className="btn-catalogue">
+                  <a className="nav-link active">Catalogue</a>
+                </button>
+              </Link>
+            </li>
+          </ul>
+        )}
       </div>
     </nav>
   );

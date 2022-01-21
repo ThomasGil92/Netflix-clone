@@ -43,31 +43,42 @@ const HomeHeader = ({ children }) => {
           </h3>
         </div>
         <div className="col-8 mx-auto text-center mt-4">
-          <div className="form-floating d-flex">
-            <input
-              style={{ borderTopRightRadius: 0, borderBottomRightRadius: 0 }}
-              type="email"
-              className="form-control"
-              id="floatingInput"
-              placeholder="name@example.com"
-            />
-            <label className="text-dark" htmlFor="floatingInput">
-              Adresse Email
-            </label>
-            <button
-              style={{
-                fontSize: "1.625rem",
-                fontWeight: 400,
-                borderTopLeftRadius: 0,
-                borderBottomLeftRadius: 0,
-              }}
-              className="btn text-white btn-red py-2 px-4 "
-              type="button"
-              id="button-email"
-            >
-              Commencer
-            </button>
-          </div>
+          <form className="row g-3 needs-validation" noValidate>
+            <div className="form-floating d-flex">
+              <input
+                style={{ borderTopRightRadius: 0, borderBottomRightRadius: 0 }}
+                type="email"
+                className="form-control"
+                id="floatingInput"
+                placeholder="name@example.com"
+                required
+              />
+              <label className="text-dark" htmlFor="floatingInput">
+                Adresse Email
+              </label>
+
+              <button
+                style={{
+                  fontSize: "1.625rem",
+                  fontWeight: 400,
+                  borderTopLeftRadius: 0,
+                  borderBottomLeftRadius: 0,
+                }}
+                className="text-white btn-red py-2 px-4 "
+                type="button"
+                id="button-email"
+                onClick={(e) => {
+                  e.preventDefault(),
+                    alert(
+                      "Ce formulaire n'est pas actif. Ce site est juste un projet de développement."
+                    );
+                }}
+              >
+                Commencer
+              </button>
+            </div>
+            <div className="invalid-feedback">Votre email est requis!</div>
+          </form>
         </div>
       </div>
     </div>
