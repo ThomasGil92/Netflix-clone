@@ -81,34 +81,33 @@ const HeaderMovie = ({ movie }) => {
               </button>
             </div>
           </div>
-          {movie.backdrop_path ? (
-            <img
-              src={`${process.env.NEXT_PUBLIC_IMDB_API_IMG_URL}${movie.backdrop_path}`}
-              style={{
-                maxWidth: "60vw",
-                width: "60vw",
-                height: "auto",
-                position: "absolute",
-                right: 0,
-                zIndex: -1,
-              }}
-            />
-          ) : (
-            <div
-              style={{
-                backgroundColor: "#000000",
-                maxWidth: "60vw",
-                width: "60vw",
-                height: "auto",
-                position: "absolute",
-                right: 0,
-                color: "white",
-                zIndex: -1,
-              }}
-            >
-              test
-            </div>
-          )}
+
+          <div
+            style={{
+              backgroundColor: "#000",
+              maxWidth: "60vw",
+              width: "60vw",
+              height: "100%",
+              position: "absolute",
+              right: 0,
+              zIndex: -2,
+            }}
+            className="d-flex justify-content-center align-items-center"
+          >
+            <div className="loader">Loading...</div>
+          </div>
+          <img
+            src={`${process.env.NEXT_PUBLIC_IMDB_API_IMG_URL}${movie.backdrop_path}`}
+            style={{
+              backgroundColor: "#000",
+              maxWidth: "60vw",
+              width: "60vw",
+              height: "auto",
+              position: "absolute",
+              right: 0,
+              zIndex: -1,
+            }}
+          />
         </div>
       </div>
       {/* <!-- Modal --> */}
