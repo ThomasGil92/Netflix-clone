@@ -55,7 +55,9 @@ const HeaderMovie = ({ movie }) => {
           <div>
             <div style={{ maxWidth: "50vw", paddingLeft: 12, zIndex: 100000 }}>
               {" "}
-              <h1 className="bigger_h1">Regarder {movie.title} maintenant</h1>
+              <h1 className="bigger_h1" style={{ lineHeight: 0.9 }}>
+                Regarder {movie.title} maintenant
+              </h1>
               <p>{movie.overview.split(" ").slice(0, 30).join(" ")} ...</p>
               <button
                 type="button"
