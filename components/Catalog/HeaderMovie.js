@@ -83,6 +83,9 @@ const HeaderMovie = ({ movie }) => {
           </div>
           <img
             src={`${process.env.NEXT_PUBLIC_IMDB_API_IMG_URL}${movie.backdrop_path}`}
+            onLoad={() => {
+              alert("loading");
+            }}
             style={{
               maxWidth: "60vw",
               width: "60vw",

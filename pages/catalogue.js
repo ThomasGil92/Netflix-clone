@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import HeaderMovie from "../components/Catalog/HeaderMovie";
-import Section1 from "../components/Catalog/Section1";
+import Footer from "../components/Footer";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination, Navigation } from "swiper";
 
@@ -78,6 +78,7 @@ const Catalogue = ({
             {genresRows("Action", actionMovies)}
             {genresRows("Animation", animationMovies)}
           </div>
+          <Footer />
 
           {/* <Section1 movies={movies.results} setMovie={setMovie} /> */}
         </Layout>

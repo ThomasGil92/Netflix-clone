@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.css";
 import GlobalLayout from "../components/Layout";
 
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import HomeHeader from "../components/Home/Header";
 import HomeSection1 from "../components/Home/Section1";
 import HomeSection2 from "../components/Home/Section2";
@@ -22,6 +23,7 @@ export default function Home() {
         <HomeSection3 />
         <HomeSection4 />
         <FAQ />
+        <Footer />
       </GlobalLayout>
     </div>
   );

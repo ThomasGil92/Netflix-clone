@@ -11,7 +11,7 @@ const Navbar = () => {
       }}
     >
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="/">
           <svg
             viewBox="0 0 111 30"
             className="svg-icon svg-icon-netflix-logo"
