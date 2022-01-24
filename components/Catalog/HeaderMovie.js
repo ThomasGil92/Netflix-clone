@@ -81,20 +81,37 @@ const HeaderMovie = ({ movie }) => {
               </button>
             </div>
           </div>
-          <img
-            src={`${process.env.NEXT_PUBLIC_IMDB_API_IMG_URL}${movie.backdrop_path}`}
-            onLoad={() => {
-              alert("loading");
-            }}
-            style={{
-              maxWidth: "60vw",
-              width: "60vw",
-              height: "auto",
-              position: "absolute",
-              right: 0,
-              zIndex: -1,
-            }}
-          />
+          {movie.backdrop_path ? (
+            <img
+              src={`${process.env.NEXT_PUBLIC_IMDB_API_IMG_URL}${movie.backdrop_path}`}
+              onLoad={() => {
+                alert("loading");
+              }}
+              style={{
+                maxWidth: "60vw",
+                width: "60vw",
+                height: "auto",
+                position: "absolute",
+                right: 0,
+                zIndex: -1,
+              }}
+            />
+          ) : (
+            <div
+              style={{
+                backgroundColor: "#000",
+                maxWidth: "60vw",
+                width: "60vw",
+                height: "auto",
+                position: "absolute",
+                right: 0,
+                color: "white",
+                zIndex: -1,
+              }}
+            >
+              test
+            </div>
+          )}
         </div>
       </div>
       {/* <!-- Modal --> */}
