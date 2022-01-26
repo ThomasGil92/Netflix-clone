@@ -2,7 +2,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination, Navigation } from "swiper";
 
 SwiperCore.use([Pagination, Navigation]);
-import "swiper/css";
+import "swiper/swiper-bundle.min.css";
+import "swiper/swiper.min.css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { useEffect } from "react";
