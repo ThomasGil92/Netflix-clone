@@ -5,6 +5,7 @@ const Navbar = () => {
   const router = useRouter();
   return (
     <nav
+      name="nav"
       className="navbar navbar-expand-lg navbar-dark w-100 px-md-5 pt-4 position-absolute"
       style={{
         zIndex: 10000,

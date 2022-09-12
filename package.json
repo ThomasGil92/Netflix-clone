@@ -5,20 +5,29 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest --watch"
   },
   "dependencies": {
     "@react-pdf/renderer": "^2.0.21",
     "bootstrap": "^5.1.3",
     "bootstrap-icons": "^1.7.2",
     "html-to-image": "^1.9.0",
-    "next": "12.0.7",
+    "next": "latest",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-native-youtube-iframe": "^2.2.2",
     "swiper": "^7.4.1"
   },
   "devDependencies": {
-    "eslint": "8.6.0",
-    "eslint-config-next": "12.0.7"
+    "@testing-library/jest-dom": "5.16.1",
+    "@testing-library/react": "12.1.2",
+    "@testing-library/user-event": "13.5.0",
+    "@types/react": "17.0.38",
+    "babel-jest": "27.4.5",
+    "eslint": "8.5.0",
+    "eslint-config-next": "latest",
+    "eslint-plugin-testing-library": "5.0.1",
+    "jest": "27.4.5"
   }
 }
