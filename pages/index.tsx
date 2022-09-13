@@ -1,5 +1,3 @@
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
 import GlobalLayout from "../components/Layout";
 
 import Navbar from "../components/Navbar";

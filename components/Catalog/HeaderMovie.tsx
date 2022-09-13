@@ -1,11 +1,32 @@
-import { useEffect, useState } from "react";
+import React, { useState, MouseEvent, useEffect, useRef } from "react";
+import { Movie } from "@Types";
 import Navbar from "../Navbar";
 
-const HeaderMovie = ({ movie }) => {
-  const [trailerUrl, setTrailerUrl] = useState();
+interface Trailers {
+  id: number;
+  results: {
+    id: string;
+    iso_639_1: string;
+    iso_3166_1: string;
+    key: string;
+    name: string;
+    official: boolean;
+    published_at: string;
+    site: string;
+    size: number;
+    type: string;
+  }[];
+}
+
+interface MovieProps {
+  movie: Movie;
+}
+
+const HeaderMovie: React.FC<MovieProps> = ({ movie }) => {
+  const [trailerUrl, setTrailerUrl] = useState<string>();
 
   const getTrailerUrl = async () => {
-    const trailers = await fetch(
+    const trailers: Trailers = await fetch(
       `${process.env.NEXT_PUBLIC_IMDB_API_URL}/movie/${movie.id}/videos?api_key=${process.env.NEXT_PUBLIC_IMDB_API_KEY}`
     )
       .then(function (response) {
@@ -25,13 +46,8 @@ const HeaderMovie = ({ movie }) => {
     setTrailerUrl(trailer().key);
   };
 
-  const hide = (id, e) => {
-    const myModalEl = document.getElementById(id);
-    const modal = bootstrap.Modal.getInstance(myModalEl);
-    if (myModalEl.contains(e.target)) {
-    } else {
-      modal.hide(), setTrailerUrl();
-    }
+  const hide = (): void => {
+    setTrailerUrl("");
   };
 
   return (
@@ -99,6 +115,7 @@ const HeaderMovie = ({ movie }) => {
             <div className="loader">Loading...</div>
           </div>
           <img
+            alt="poster"
             src={`${process.env.NEXT_PUBLIC_IMDB_API_IMG_URL}${movie.backdrop_path}`}
             style={{
               backgroundColor: "#000",
@@ -116,11 +133,12 @@ const HeaderMovie = ({ movie }) => {
       <div
         className="modal fade text-dark"
         id="FirstMovieHeader"
-        tabIndex="-1"
+        tabIndex={-1}
         aria-labelledby="FirstMovieHeaderLabel"
         aria-hidden="true"
+        data-bs-dismiss="modal"
         onClick={(e) => {
-          e.preventDefault(), hide("FirstMovieHeader", e);
+          e.preventDefault(), hide();
         }}
       >
         <div className="modal-dialog modal-lg  modal-dialog-centered">
@@ -128,7 +146,6 @@ const HeaderMovie = ({ movie }) => {
             {trailerUrl && (
               <div className="modal-body p-0 " style={{ maxHeight: 500 }}>
                 <iframe
-                  type="text/html"
                   width="100%"
                   height="500"
                   src={`https://www.youtube.com/embed/${trailerUrl}?autoplay=1&origin=localhost:3000&mute=1`}
@@ -141,14 +158,16 @@ const HeaderMovie = ({ movie }) => {
           </div>
         </div>
       </div>
+
       <div
         className="modal fade text-dark"
         id="MoreInfos"
-        tabIndex="-1"
+        tabIndex={-1}
         aria-labelledby="MoreInfosHeaderLabel"
         aria-hidden="true"
+        data-bs-dismiss="modal"
         onClick={(e) => {
-          e.preventDefault(), hide("MoreInfos", e);
+          e.preventDefault(), hide();
         }}
       >
         <div

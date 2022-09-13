@@ -7,6 +7,7 @@ import {
   Font,
   Image,
 } from "@react-pdf/renderer";
+import { FunctionComponent } from "react";
 
 const styles = StyleSheet.create({
   page: {
@@ -57,7 +58,11 @@ const styles = StyleSheet.create({
   },
 });
 
-const CVPDF = (props) => {
+interface PDFProps {
+  url: string;
+}
+
+const CVPDF: FunctionComponent<PDFProps> = ({ url }) => {
   return (
     <Document title={"CV Thomas Gil REACT/NEXT.js"}>
       <Page size={"A3"} style={styles.page}>
@@ -76,7 +81,6 @@ const CVPDF = (props) => {
               borderRadius: "50%",
             }}
             src={"assets/img/thomas-g.jpeg"}
-            alt="profile photo"
           />
         </View>
         <View style={styles.col12}>
@@ -385,8 +389,7 @@ const CVPDF = (props) => {
                 width: "auto",
                 height: "auto",
               }}
-              src={props.url}
-              alt="skills"
+              src={url}
             />
             <View
               style={{

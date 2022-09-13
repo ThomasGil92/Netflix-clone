@@ -1,4 +1,6 @@
-const Section1 = () => {
+import { FunctionComponent } from "react";
+
+const Section1: FunctionComponent = () => {
   return (
     <div className="pt-2 text-white" style={{ backgroundColor: "#222222" }}>
       <div className="p-4" style={{ backgroundColor: "#000000" }}>

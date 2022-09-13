@@ -1,4 +1,6 @@
-const Section2 = () => {
+import { FunctionComponent } from "react";
+
+const Section2: FunctionComponent = () => {
   return (
     <div className="pt-2 text-white" style={{ backgroundColor: "#222222" }}>
       <div className="p-4" style={{ backgroundColor: "#000000" }}>
@@ -9,7 +11,7 @@ const Section2 = () => {
               style={{ zIndex: 1 }}
             >
               <img
-                alt=""
+                alt="mobile"
                 className="w-100"
                 src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg"
                 data-uia="section2-img"
@@ -17,6 +19,7 @@ const Section2 = () => {
               <div className="home-card-animation-section2 d-flex align-items-center">
                 <div style={{ margin: "0 1em 0 0" }}>
                   <img
+                    alt="desktop"
                     style={{ height: "4.5em" }}
                     src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/boxshot.png"
                   />

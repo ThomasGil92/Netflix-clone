@@ -1,14 +1,21 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination, Navigation } from "swiper";
+import { Movie } from "@Types";
+import { Dispatch, SetStateAction } from "react";
 
 SwiperCore.use([Pagination, Navigation]);
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { useEffect } from "react";
+import { FunctionComponent } from "react";
 
-const Section1 = ({ movies, setMovie }) => {
+interface MovieProps {
+  movies: Movie[];
+  setMovie: Dispatch<SetStateAction<Movie>>;
+}
+
+const Section1: FunctionComponent<MovieProps> = ({ movies, setMovie }) => {
   const Slider = () => {
     return (
       <Swiper

@@ -1,5 +1,5 @@
 const Footer = () => {
-  const footerObj = [
+  const footerObj: string[] = [
     "FAQ",
     "Centre d'aide",
     "Compte",

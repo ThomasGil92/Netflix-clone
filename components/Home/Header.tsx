@@ -1,4 +1,6 @@
-const HomeHeader = ({ children }) => {
+import { FunctionComponent } from "react";
+
+const HomeHeader: FunctionComponent = ({ children }) => {
   return (
     <div style={{ position: "relative", paddingBottom: 150 }}>
       {children}

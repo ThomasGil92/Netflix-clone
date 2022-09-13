@@ -1,11 +1,12 @@
+import type { NextPage } from "next";
 import { useEffect, useState } from "react";
-import { pdf, PDFViewer, PDFDownloadLink } from "@react-pdf/renderer";
+import { PDFViewer } from "@react-pdf/renderer";
 import * as htmlToImage from "html-to-image";
 import CVPDF from "../components/CV/PDF";
 
-const CV = () => {
-  const [isClient, setIsClient] = useState(false);
-  const [url, setUrl] = useState();
+const CV: NextPage = () => {
+  const [isClient, setIsClient] = useState<boolean>(false);
+  const [url, setUrl] = useState<string>();
 
   const skills = [
     { name: "Javascript", percent: 100 },
@@ -27,9 +28,10 @@ const CV = () => {
   ];
 
   const getUrl = () => {
-    htmlToImage
-      .toBlob(document.getElementById("progress-section"))
-      .then(function (blob) {
+    const progressSection: HTMLElement | null =
+      document.getElementById("progress-section");
+    progressSection &&
+      htmlToImage.toBlob(progressSection).then(function (blob) {
         const urlBlob = URL.createObjectURL(blob);
         setUrl(urlBlob);
       });
@@ -46,8 +48,8 @@ const CV = () => {
                   className="progress-bar progress-bar-striped"
                   role="progressbar"
                   aria-valuenow={item.percent}
-                  aria-valuemin="0"
-                  aria-valuemax="100"
+                  aria-valuemin={0}
+                  aria-valuemax={100}
                   style={{ width: `${item.percent}%`, height: 15 }}
                 ></div>
               </div>
@@ -64,7 +66,8 @@ const CV = () => {
 
   return (
     <div>
-      {getProgressBars()}
+      {/* 
+      {getProgressBars()} */}
       {url && isClient && (
         <PDFViewer
           showToolbar={true}

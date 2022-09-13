@@ -1,5 +1,10 @@
+interface AccordionItem {
+  header: string;
+  paragraphs: string[];
+}
+
 const FAQ = () => {
-  const accordionItems = [
+  const accordionItems: AccordionItem[] = [
     {
       header: "Netflix, qu'est-ce que c'est ?",
       paragraphs: [
