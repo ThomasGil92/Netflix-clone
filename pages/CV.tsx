@@ -31,6 +31,7 @@ const CV: NextPage = () => {
     const progressSection: HTMLElement | null =
       document.getElementById("progress-section");
     progressSection &&
+      // @ts-ignore
       htmlToImage.toBlob(progressSection).then(function (blob) {
         const urlBlob = URL.createObjectURL(blob);
         setUrl(urlBlob);
