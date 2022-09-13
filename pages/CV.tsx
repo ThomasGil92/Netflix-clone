@@ -31,33 +31,53 @@ const CV: NextPage = () => {
     const progressSection: HTMLElement | null =
       document.getElementById("progress-section");
     progressSection &&
-      // @ts-ignore
       htmlToImage.toBlob(progressSection).then(function (blob) {
+        // @ts-ignore
         const urlBlob = URL.createObjectURL(blob);
         setUrl(urlBlob);
       });
   };
   const getProgressBars = () => {
     return (
-      <div id={`progress-section`} style={{ width: "15%" }}>
-        {skills.map((item, id) => {
-          return (
-            <div key={id} className="pdf-card px-2 py-2 ">
-              <p className="mb-0">{item.name}</p>
-              <div className="progress bg-secondary">
-                <div
-                  className="progress-bar progress-bar-striped"
-                  role="progressbar"
-                  aria-valuenow={item.percent}
-                  aria-valuemin={0}
-                  aria-valuemax={100}
-                  style={{ width: `${item.percent}%`, height: 15 }}
-                ></div>
+      <>
+        <div
+          style={{
+            width: "15%",
+            position: "absolute",
+            backgroundColor: "white",
+            zIndex: -1,
+            height: "100vh",
+            top: 0,
+          }}
+        />
+        <div
+          id={`progress-section`}
+          style={{
+            width: "15%",
+            position: "absolute",
+            zIndex: -10,
+            top: 0,
+          }}
+        >
+          {skills.map((item, id) => {
+            return (
+              <div key={id} className="pdf-card px-2 py-2 ">
+                <p className="mb-0">{item.name}</p>
+                <div className="progress bg-secondary">
+                  <div
+                    className="progress-bar progress-bar-striped"
+                    role="progressbar"
+                    aria-valuenow={item.percent}
+                    aria-valuemin={0}
+                    aria-valuemax={100}
+                    style={{ width: `${item.percent}%`, height: 15 }}
+                  ></div>
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+      </>
     );
   };
   useEffect(() => {
@@ -66,14 +86,14 @@ const CV: NextPage = () => {
   }, []);
 
   return (
-    <div>
-      {/* 
-      {getProgressBars()} */}
+    <div style={{ position: "relative" }}>
+      {getProgressBars()}
+
       {url && isClient && (
         <PDFViewer
           showToolbar={true}
           width={"100%"}
-          style={{ minHeight: "100vh" }}
+          style={{ minHeight: "100vh", zIndex: 10000 }}
         >
           <CVPDF url={url} />
         </PDFViewer>
